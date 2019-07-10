@@ -52,6 +52,8 @@ lapicw(int index, int value)
 }
 //PAGEBREAK!
 
+
+
 void
 lapicinit(void)
 {
@@ -97,6 +99,15 @@ lapicinit(void)
   // Enable interrupts on the APIC (but not on the processor).
   lapicw(TPR, 0);
 }
+
+int
+lapicid(void)
+{
+    if (!lapic)
+        return 0;
+    return lapic[ID] >> 24;
+}
+
 
 int
 cpunum(void)

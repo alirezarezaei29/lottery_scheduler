@@ -8,6 +8,7 @@ struct rtcdate;
 struct spinlock;
 struct sleeplock;
 struct stat;
+struct table;
 struct superblock;
 
 // bio.c
@@ -80,7 +81,7 @@ void            lapiceoi(void);
 void            lapicinit(void);
 void            lapicstartap(uchar, uint);
 void            microdelay(int);
-
+int             lapicid(void);
 // log.c
 void            initlog(int dev);
 void            log_write(struct buf*);
@@ -116,6 +117,7 @@ void            userinit(void);
 int             wait(void);
 void            wakeup(void*);
 void            yield(void);
+int             counts(struct table*);
 
 // swtch.S
 void            swtch(struct context**, struct context*);

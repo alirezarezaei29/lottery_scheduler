@@ -176,6 +176,8 @@ UPROGS=\
 	_wc\
 	_zombie\
 	_populate\
+	_cpu_intensive_test\
+	_io_intensive_test\
 
 fs.img: mkfs README $(UPROGS)
 	./mkfs fs.img README $(UPROGS)
